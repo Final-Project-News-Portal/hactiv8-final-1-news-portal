@@ -27,5 +27,5 @@ function Card({ article }) {
     </div>
   );
 }
-//Contoh pr
+//Contoh pr 2
 export default Card;
