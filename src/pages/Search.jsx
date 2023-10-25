@@ -28,11 +28,16 @@ function Search() {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="container mx-auto p-4 mt-14">
 =======
     <div className="flex ml-10 mr-10 mx-auto p-4 mt-0">
     <div className="mx-auto p-4 mt-14">
 >>>>>>> 9062451 (Updated HeroSection, added Headline component)
+=======
+    <div className="flex ml-10 mr-10 mx-auto p-4 mt-0">
+    <div className="mx-auto p-4 mt-14">
+>>>>>>> 95d94721239a0d9fc72ce217f8d75d419f1f0c37
       <h1 className="text-3xl font-semibold mb-4">{query}</h1>
       {searchResults.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -45,9 +50,13 @@ function Search() {
       )}
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     </div>
 >>>>>>> 9062451 (Updated HeroSection, added Headline component)
+=======
+    </div>
+>>>>>>> 95d94721239a0d9fc72ce217f8d75d419f1f0c37
   );
 }
 
