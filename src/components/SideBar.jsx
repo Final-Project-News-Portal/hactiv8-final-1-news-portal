@@ -19,10 +19,10 @@ const menuVariants = {
 const SideBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center mr-0">
       <div
         onClick={() => setOpenMenu(true)}
-        className="text-3xl cursor-pointer"
+        className="text-3xl cursor-pointer mr-10"
       >
         <CgMenuRight />
       </div>
@@ -38,7 +38,9 @@ const SideBar = () => {
         >
           <IoMdClose />
         </div>
-        <ul className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl">
+        <ul  
+        onClick={() => setOpenMenu(false)}
+        className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl">
           <li>
             <Link to={"/indonesia"}>Indonesia</Link>
           </li>

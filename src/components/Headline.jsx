@@ -1,27 +1,60 @@
-/* eslint-disable react/prop-types */
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 function Headline({ hotTopic }) {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [heroHeight, setHeroHeight] = useState(windowWidth > 767 ? '100%' : '350px');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setHeroHeight(window.innerWidth > 767 ? '600px' : '300px');
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const heroStyle = {
+    width: '100%',
+    height: heroHeight,
+  };
+
   return (
-    <div className="flex gap-2">
-      <div
-        className="flex mr-0 ml-0 rounded-xl relative"
-        style={{ width: "400rem", height: "500px" }}
-      >
-        <img
-          src={hotTopic.urlToImage}
-          alt={hotTopic.url}
-          className="absolute rounded-xl w-full h-full bg-center object-cover z-0 "
-        />
-        <div className="flex h-full w-full bg-fixed bg-[hsla(0,0%,0%,0.75)] z-10 rounded-xl">
-          <h1 className="px-6 self-end text-white md:px-12 mt-6 ml-0 mb-3 text-3xl font-semibold tracking-tight md:text-4xl xl:text-5xl text-left">
-            <a href={hotTopic.url}>{hotTopic.title}</a>
-          </h1>
+    <section className="w-full flex flex-col md:flex-row mt-0">
+      <div className=" relative overflow-hidden w-full rounded-lg ">
+        <a href={hotTopic.url} target='blank' >
+          <img src={hotTopic.urlToImage} alt="" style={heroStyle}  />
+        </a>
+        <div className="absolute top-0 right-0 bottom-0 left-0 h-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.50)]">
+          <div className="flex h-full items-end">
+            <div className="px-6 text-center text-white md:px-12">
+              <a href={hotTopic.url} target="_blank" rel="noopener noreferrer">
+                <h1 className="mt-6 ml-0 mb-3 text-lg font-semibold tracking-tight md:text-2xl xl:text-5xl text-left">
+                  {hotTopic.title}
+                </h1>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="font-extrabold text-black self-center">
-        <p>{hotTopic.description}</p>
+      <div className="w-[30%] cursor-pointer text-xl">
+        <p className="ml-6 text-2xl hidden sm:block  text-gray-600">{hotTopic.description}</p>
       </div>
-    </div>
+    </section>
   );
 }
+
+Headline.propTypes = {
+  hotTopic: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    urlToImage: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+  }).isRequired,
+};
 
 export default Headline;

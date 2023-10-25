@@ -1,9 +1,9 @@
-import ButtonSave from "./buttonSave";
+import ButtonSave from "./ButtonSave";
 
 /* eslint-disable react/prop-types */
 function Card({ article }) {
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
+    <div className="max-w-sm mx-auto bg-white rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
       <div>
         <img
           src={article.urlToImage}
@@ -11,8 +11,10 @@ function Card({ article }) {
           className="w-full h-48 object-cover"
         />
         <div className="px-6 py-4">
-          <h2 className="text-xl font-semibold">{article.title}</h2>
-          <p className="text-gray-700">{article.description}</p>
+          <h2 className="text-xl md:text-lg lg:text-xl xl:text-2xl font-light">{article.title}</h2>
+          <p className="text-gray-700 hidden md:hidden lg:block text-lg">
+            {/* Konten teks */}
+          </p>
         </div>
       </div>
       <div className="flex flex-row px-6 py-4 justify-between">
