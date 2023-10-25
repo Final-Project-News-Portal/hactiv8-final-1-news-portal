@@ -45,13 +45,9 @@ const Hero = () => {
   return (
     <div className="flex flex-col gap-8">
       <Headline hotTopic={headline} />
-<<<<<<< HEAD
-
-=======
       <h1 className="mt-6 mb-5 text-3xl font-bold tracking-tight md:text-4xl xl:text-4xl text-left">
         Latest Release
       </h1>
->>>>>>> 95d94721239a0d9fc72ce217f8d75d419f1f0c37
       <div className="grid md:grid-cols-4 grid-cols-2 gap-8">
         {newsData.slice(1, 5).map((article, index) => (
           <Card key={index} article={article} />

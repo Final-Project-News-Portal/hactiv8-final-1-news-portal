@@ -1,11 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
-=======
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
-
->>>>>>> 9062451 (Updated HeroSection, added Headline component)
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap");
 
 @layer base {
   ::-webkit-scrollbar {
@@ -30,15 +26,12 @@
     @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
 }
-<<<<<<< HEAD
-=======
 
-*{
+* {
   box-sizing: border-box;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
-.App{
+.App {
   font-family: sans-serif;
   text-align: center;
 }
->>>>>>> 9062451 (Updated HeroSection, added Headline component)
