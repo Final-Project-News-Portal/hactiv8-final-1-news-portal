@@ -9,7 +9,11 @@ function Card({ article }) {
       />
       <div className="px-6 py-4">
         <h2 className="text-xl font-semibold">{article.title}</h2>
+<<<<<<< HEAD
         <p className="text-gray-700">{article.description}</p>
+=======
+        <p className="text-gray-700">{article.description.slice(0, 100)}...</p>
+>>>>>>> 9062451 (Updated HeroSection, added Headline component)
       </div>
       <div className="flex flex-row px-6 py-4">
         <a
@@ -27,5 +31,9 @@ function Card({ article }) {
     </div>
   );
 }
+<<<<<<< HEAD
 //Contoh pr 2
+=======
+
+>>>>>>> 9062451 (Updated HeroSection, added Headline component)
 export default Card;

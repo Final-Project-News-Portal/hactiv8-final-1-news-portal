@@ -27,7 +27,12 @@ function Search() {
   }, [query]);
 
   return (
+<<<<<<< HEAD
     <div className="container mx-auto p-4 mt-14">
+=======
+    <div className="flex ml-10 mr-10 mx-auto p-4 mt-0">
+    <div className="mx-auto p-4 mt-14">
+>>>>>>> 9062451 (Updated HeroSection, added Headline component)
       <h1 className="text-3xl font-semibold mb-4">{query}</h1>
       {searchResults.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -39,6 +44,10 @@ function Search() {
         <p>Searching...</p>
       )}
     </div>
+<<<<<<< HEAD
+=======
+    </div>
+>>>>>>> 9062451 (Updated HeroSection, added Headline component)
   );
 }
 
