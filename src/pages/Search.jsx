@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 
 function Search() {
   const location = useLocation();
+  //query get"q" from header handle search
   const query = new URLSearchParams(location.search).get("q");
   const [searchResults, setSearchResults] = useState([]);
 
