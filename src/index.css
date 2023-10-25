@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap");
 
 @layer base {
   ::-webkit-scrollbar {
@@ -24,4 +25,13 @@
   .btn {
     @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }

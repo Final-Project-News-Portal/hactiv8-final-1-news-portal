@@ -1,12 +1,11 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import AnimRouter from "./components/AnimRouter";
-import Header from "./components/Header";
-
+import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <>
       <Router>
-        <Header />
+        <Navbar />
         <AnimRouter />
       </Router>
     </>
