@@ -28,7 +28,7 @@ function Search() {
   }, [query]);
 
   return (
-    <div className="ml-10 mr-10 mx-auto p-4 mt-24">
+    <div className="ml-12 mr-10 mx-auto p-4 mt-16">
       <div className="flex mt-5 mb-9 justify-center items-center md:hidden lg:hidden">
         <SearchBar />
       </div>
@@ -40,7 +40,7 @@ function Search() {
           ))}
         </div>
       ) : (
-        <p>Searching...</p>
+        <p></p>
       )}
     </div>
   );
