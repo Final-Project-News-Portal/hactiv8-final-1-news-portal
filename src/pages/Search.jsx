@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
 import { useLocation } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
 
 function Search() {
   const location = useLocation();
@@ -28,10 +27,7 @@ function Search() {
   }, [query]);
 
   return (
-    <div className="ml-12 mr-10 mx-auto p-4 mt-16">
-      <div className="flex mt-5 mb-9 justify-center items-center md:hidden lg:hidden">
-        <SearchBar />
-      </div>
+    <div className="ml-12 mr-10 mx-auto p-4 mt-24">
       <h1 className="text-3xl font-semibold mb-4">{query}</h1>
       {searchResults.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -40,7 +36,7 @@ function Search() {
           ))}
         </div>
       ) : (
-        <p></p>
+        <p>Search...</p>
       )}
     </div>
   );

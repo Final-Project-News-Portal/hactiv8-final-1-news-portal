@@ -3,7 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
+/* @layer base {
   ::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
@@ -25,7 +25,7 @@
   .btn {
     @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
-}
+} */
 
 * {
   box-sizing: border-box;

@@ -1,7 +1,10 @@
+import FetchData from "../components/FetchData";
+
+
 const Covid = () => {
   return (
-    <div className="mt-14">
-      <p>ini page Covid</p>
+    <div>
+      <FetchData  cat="Covid" title="Covid"/>
     </div>
   );
 };

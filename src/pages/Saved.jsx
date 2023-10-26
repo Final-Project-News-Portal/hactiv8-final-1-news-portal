@@ -20,7 +20,7 @@ function Saved() {
   };
 
   return (
-    <div className="container mx-auto mt-24 ">
+    <div className="ml-10 mr-10 mx-auto p-4 mt-10 ">
       <h1 className="text-2xl font-bold mb-10 mt-10">Berita yang Tersimpan</h1>
       {savedArticles.length > 0 ? (
         <ul>
