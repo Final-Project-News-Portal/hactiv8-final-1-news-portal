@@ -1,6 +1,7 @@
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 import SideBar from "./SideBar";
+import { FiSearch } from "react-icons/fi";
 
 const Navbar = () => {
   return (
@@ -8,18 +9,21 @@ const Navbar = () => {
       <div className="flex items-center ml-10 mr-10">
         <div className="flex bg-black rounded md:cursor-pointer">
           <Link to="/">
-            <h1 className="text-3xl font-bold text-white p-2">News</h1>
+            <h1 className="text-1xl md:text-3xl lg:text-3xl font-bold text-white p-2">News</h1>
           </Link>
         </div>
-        <div className="flex text-3xl font-bold items-center cursor-pointer">
+        <div className="flex text-1xl md:text-3xl lg:text-3xl font-bold items-center cursor-pointer">
           <Link to="/">
             <h1 className="ml-3">Portal</h1>
           </Link>
         </div>
       </div>
-      <div className="flex items-center mt-0 md:mt-0 ">
+      <div className="flex items-center mt-0 md:mt-0">
         <div className="hidden md:flex mr-4">
           <SearchBar />
+        </div>
+        <div className="md:hidden cursor-pointer"> 
+        <Link to="/search"><FiSearch className="text-2xl" /></Link>
         </div>
         <SideBar />
       </div>
