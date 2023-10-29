@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import axios from "axios";
 
 function Headline() {
@@ -95,13 +94,13 @@ function Headline() {
   );
 }
 
-Headline.propTypes = {
-  Latest: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    urlToImage: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-  }).isRequired,
-};
+// Headline.propTypes = {
+//   Latest: PropTypes.shape({
+//     url: PropTypes.string.isRequired,
+//     urlToImage: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     description: PropTypes.string,
+//   }).isRequired,
+// };
 
 export default Headline;
