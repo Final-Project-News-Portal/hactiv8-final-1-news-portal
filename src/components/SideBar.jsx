@@ -22,7 +22,7 @@ const SideBar = () => {
     <div className="flex justify-between items-center mr-0">
       <div
         onClick={() => setOpenMenu(true)}
-        className="text-3xl cursor-pointer mr-10"
+        className="text-3xl cursor-pointer mr-10 hover:scale-110 transition duration-300"
       >
         <CgMenuRight />
       </div>
@@ -34,23 +34,24 @@ const SideBar = () => {
       >
         <div
           onClick={() => setOpenMenu(false)}
-          className="text-4xl absolute  text-primary cursor-pointer"
+          className="text-4xl absolute  text-primary cursor-pointer hover:scale-110 transition duration-300"
         >
           <IoMdClose />
         </div>
-        <ul  
-        onClick={() => setOpenMenu(false)}
-        className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl">
-          <li>
+        <ul
+          onClick={() => setOpenMenu(false)}
+          className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl "
+        >
+          <li className="hover:scale-110 transition duration-300">
             <Link to={"/indonesia"}>Indonesia</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 transition duration-300">
             <Link to={"/covid"}>Covid</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 transition duration-300">
             <Link to={"/programming"}>Programming</Link>
           </li>
-          <li>
+          <li className="hover:scale-110 transition duration-300">
             <Link to={"/saved"}>Saved</Link>
           </li>
         </ul>

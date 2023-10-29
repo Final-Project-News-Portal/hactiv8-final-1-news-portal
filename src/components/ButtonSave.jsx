@@ -44,11 +44,11 @@ const ButtonSave = ({ article }) => {
       onClick={toggleSaved}
       className={`ml-2 ${
         isSaved
-          ? "bg-red-500 text-white rounded items-center h-auto w-20"
-          : "bg-blue-500 text-white rounded items-center h-auto w-12"
-      } hover:underline`}
+          ? "bg-red-500 text-white rounded items-center h-auto w-14 hover:bg-red-800"
+          : "bg-blue-500 text-white rounded items-center h-auto w-12 hover:bg-blue-800"
+      } transition-all duration-300`}
     >
-      {isSaved ? "Un-Saved" : "Save"}
+      {isSaved ? "Saved" : "Save"}
     </button>
   );
 };
