@@ -40,13 +40,18 @@ const FetchData = ({ apiUrl, title }) => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {newsData ? (
-          newsData.map((article, index) => (
-            <Card
-              key={index}
-              article={article}
-              button={<ButtonSave article={article} />}
-            />
-          ))
+          newsData.map((article, index) => {
+            if (article.title && article.title.includes(["Removed"])) {
+              return null;
+            }
+            return (
+              <Card
+                key={index}
+                article={article}
+                button={<ButtonSave article={article} />}
+              />
+            );
+          })
         ) : (
           <p>Loading...</p>
         )}
