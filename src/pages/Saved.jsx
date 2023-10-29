@@ -34,7 +34,7 @@ function Saved() {
               button={
                 <button
                   onClick={() => handleDelete(index)}
-                  className="bg-red-500 text-white rounded items-center h-auto w-14 hover:scale-110 transition duration-300"
+                  className="bg-red-500 text-white rounded items-center h-auto w-14 hover:bg-red-800 transition duration-300"
                 >
                   Delete
                 </button>
