@@ -5,6 +5,13 @@ import axios from "axios";
 import ButtonSave from "./ButtonSave";
 
 const Hero = () => {
+  const today = new Date();
+  const oneMonthAgo = new Date();
+  oneMonthAgo.setMonth(today.getMonth() - 1);
+
+  const from = oneMonthAgo.toISOString().slice(0, 10);
+  const to = today.toISOString().slice(0, 10);
+
   const [newsData, setNewsData] = useState([]);
   const [headline, setHeadline] = useState({
     title: "",
@@ -15,12 +22,12 @@ const Hero = () => {
 
   useEffect(() => {
     const apiKey = "04a789c791974fec8efcabd0ab880136";
-    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&from=${from}&to=${to}&apiKey=${apiKey}`;
 
     axios
       .get(apiUrl)
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.articles);
         if (response.data.articles && response.data.articles.length > 0) {
           const filteredArticles = response.data.articles.filter(
             (article) =>
