@@ -4,17 +4,26 @@ import Card from "../components/Card";
 import PropTypes from "prop-types";
 import ButtonSave from "./ButtonSave";
 
-const FetchData = ({ cat, title }) => {
+const FetchData = ({ apiUrl, title }) => {
   const [newsData, setNewsData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          cat
-            ? `https://newsapi.org/v2/everything?q=${cat}&apiKey=04a789c791974fec8efcabd0ab880136`
-            : "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=04a789c791974fec8efcabd0ab880136"
-        );
+        // Menghitung tanggal awal dan akhir untuk satu bulan ini
+        const today = new Date();
+        const oneMonthAgo = new Date();
+        oneMonthAgo.setMonth(today.getMonth() - 1);
+
+        const from = oneMonthAgo.toISOString().slice(0, 10);
+        const to = today.toISOString().slice(0, 10);
+
+        // Menambahkan parameter from dan to ke URL API
+        const apiUrlWithDate = `${apiUrl}&from=${from}&to=${to}`;
+
+        console.log("Fetching data from:", apiUrlWithDate);
+
+        const response = await axios.get(apiUrlWithDate);
         setNewsData(response.data.articles);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -22,7 +31,7 @@ const FetchData = ({ cat, title }) => {
     };
 
     fetchData();
-  }, [cat]);
+  }, [apiUrl]);
 
   return (
     <div className="ml-10 mr-10 mx-auto p-4 mt-10">
@@ -47,9 +56,8 @@ const FetchData = ({ cat, title }) => {
 };
 
 FetchData.propTypes = {
-  cat: PropTypes.string,
+  apiUrl: PropTypes.string,
   title: PropTypes.string,
-  country: PropTypes.string,
 };
 
 export default FetchData;
