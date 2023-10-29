@@ -1,8 +1,8 @@
-import ButtonSave from "./ButtonSave";
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import ImgNotFound from "../assets/ImgNot.png";
 
-function Card({ article }) {
+function Card({ article, button }) {
   return (
     <div className="max-w-sm mx-auto bg-white rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
       <div>
@@ -10,7 +10,7 @@ function Card({ article }) {
           <img
             src={article.urlToImage}
             alt={article.title}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover hover:scale-105 transition duration-300"
           />
         ) : (
           <div className="image-not-available">
@@ -21,9 +21,7 @@ function Card({ article }) {
           <h2 className="text-xl md:text-lg lg:text-xl xl:text-2xl font-light">
             {article.title}
           </h2>
-          <p className="text-gray-700 hidden md:hidden lg:block text-lg">
-            {/* Konten teks */}
-          </p>
+          <p className="text-gray-700 hidden md:hidden lg:block text-lg"></p>
         </div>
       </div>
       <div className="flex flex-row px-6 py-4 justify-between">
@@ -31,11 +29,11 @@ function Card({ article }) {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 hover:underline"
+          className="text-slate-500 font-bold hover:scale-110 transition duration-300"
         >
-          Baca lebih lanjut
+          Read More
         </a>
-        <ButtonSave article={article} />
+        {button}
       </div>
     </div>
   );
@@ -46,9 +44,7 @@ Card.propTypes = {
     title: PropTypes.string,
     urlToImage: PropTypes.string,
     url: PropTypes.string,
-    // tambahkan validasi prop lain yang diperlukan
   }),
 };
 
 export default Card;
-

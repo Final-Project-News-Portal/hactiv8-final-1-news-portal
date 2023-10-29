@@ -11,7 +11,7 @@ const AnimRouter = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/covid" element={<Covid />} />
-      <Route path="/programming" element={<Programming />}  />
+      <Route path="/programming" element={<Programming />} />
       <Route path="/search" element={<Search />} />
       <Route path="/indonesia" element={<Indonesia />} />
       <Route path="/saved" element={<Saved />} />

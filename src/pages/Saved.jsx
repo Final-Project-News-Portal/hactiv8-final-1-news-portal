@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Card from "../components/Card";
 
 function Saved() {
   const [savedArticles, setSavedArticles] = useState([]);
@@ -20,25 +21,29 @@ function Saved() {
   };
 
   return (
-    <div className="ml-10 mr-10 mx-auto p-4 mt-10 ">
-      <h1 className="text-2xl font-bold mb-10 mt-10">Berita yang Tersimpan</h1>
+    <div className="ml-10 mr-10 mx-auto p-4 mt-10">
+      <h1 className="mt-10 mb-0 text-3xl font-bold tracking-tight md:mt-16 xl:mt-16 text-left">
+        Saved
+      </h1>
       {savedArticles.length > 0 ? (
-        <ul>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {savedArticles.map((article, index) => (
-            <li key={index} className="mb-4">
-              <h2 className="text-xl font-semibold">{article.title}</h2>
-              <p className="text-gray-700">{article.description}</p>
-              <button
-                onClick={() => handleDelete(index)}
-                className="text-red-500 hover:underline"
-              >
-                Delete
-              </button>
-            </li>
+            <Card
+              key={index}
+              article={article}
+              button={
+                <button
+                  onClick={() => handleDelete(index)}
+                  className="bg-red-500 text-white rounded items-center h-auto w-14 hover:scale-110 transition duration-300"
+                >
+                  Delete
+                </button>
+              }
+            />
           ))}
-        </ul>
+        </div>
       ) : (
-        <p>Tidak ada berita yang tersimpan.</p>
+        <p>No News Saved...</p>
       )}
     </div>
   );

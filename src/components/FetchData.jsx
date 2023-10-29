@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../components/Card";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import ButtonSave from "./ButtonSave";
 
-const FetchData = ({ cat,title }) => {
+const FetchData = ({ cat, title }) => {
   const [newsData, setNewsData] = useState();
 
   useEffect(() => {
@@ -25,11 +26,17 @@ const FetchData = ({ cat,title }) => {
 
   return (
     <div className="ml-10 mr-10 mx-auto p-4 mt-10">
-      <h1 className="mt-10 mb-0 text-3xl font-bold tracking-tight md:mt-16 xl:mt-16 text-left">{title}</h1>
+      <h1 className="mt-10 mb-0 text-3xl font-bold tracking-tight md:mt-16 xl:mt-16 text-left">
+        {title}
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {newsData ? (
           newsData.map((article, index) => (
-            <Card key={index} article={article} />
+            <Card
+              key={index}
+              article={article}
+              button={<ButtonSave article={article} />}
+            />
           ))
         ) : (
           <p>Loading...</p>
@@ -37,12 +44,12 @@ const FetchData = ({ cat,title }) => {
       </div>
     </div>
   );
-}
+};
 
 FetchData.propTypes = {
   cat: PropTypes.string,
-  title : PropTypes.string,
-  country: PropTypes.string
+  title: PropTypes.string,
+  country: PropTypes.string,
 };
 
 export default FetchData;

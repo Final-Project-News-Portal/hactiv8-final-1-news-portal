@@ -9,7 +9,9 @@ const Navbar = () => {
       <div className="flex items-center ml-10 mr-10">
         <div className="flex bg-black rounded md:cursor-pointer">
           <Link to="/">
-            <h1 className="text-1xl md:text-3xl lg:text-3xl font-bold text-white p-2">News</h1>
+            <h1 className="text-1xl md:text-3xl lg:text-3xl font-bold text-white p-2">
+              News
+            </h1>
           </Link>
         </div>
         <div className="flex text-1xl md:text-3xl lg:text-3xl font-bold items-center cursor-pointer">
@@ -22,13 +24,15 @@ const Navbar = () => {
         <div className="hidden md:flex mr-4">
           <SearchBar />
         </div>
-        <div className="md:hidden cursor-pointer"> 
-        <Link to="/search"><FiSearch className="text-2xl" /></Link>
+        <div className="md:hidden cursor-pointer">
+          <Link to="/search">
+            <FiSearch className="text-2xl" />
+          </Link>
         </div>
         <SideBar />
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
