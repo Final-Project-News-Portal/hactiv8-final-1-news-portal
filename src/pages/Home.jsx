@@ -5,7 +5,7 @@ const Home = () => {
     <div className="ml-10 mr-10 mx-auto p-4 mt-10">
       <Hero />
       <FetchData
-        apiUrl="https://newsapi.org/v2/top-headlines?country=us&apiKey=04a789c791974fec8efcabd0ab880136"
+        apiUrl="https://newsapi.org/v2/top-headlines?country=us&apiKey=50fb6c33c92b4a5a9932ecd5e8916d18"
         title="Latest Release"
       />
     </div>
