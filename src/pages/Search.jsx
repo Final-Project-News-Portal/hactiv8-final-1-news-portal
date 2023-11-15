@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
 import { useLocation } from "react-router-dom";
-import ButtonSave from "../components/ButtonSave";
 
 function Search() {
   const location = useLocation();
@@ -33,11 +32,7 @@ function Search() {
       {searchResults.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {searchResults.map((article, index) => (
-            <Card
-              key={index}
-              article={article}
-              button={<ButtonSave article={article} />}
-            />
+            <Card key={index} article={article} />
           ))}
         </div>
       ) : (
