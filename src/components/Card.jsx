@@ -1,8 +1,20 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import ImgNotFound from "../assets/ImgNot.png";
+import { useDispatch, useSelector } from "react-redux";
+import { addNews, removeNews } from "../store/reducers/save";
 
-function Card({ article, button }) {
+function Card({ article }) {
+  const dispatch = useDispatch();
+  const savedNews = useSelector((state) => state.savedNews.news);
+  const isSaved = savedNews.some(
+    (savedArticle) => savedArticle.title === article.title
+  );
+
+  const handleSave = () => {
+    isSaved ? dispatch(removeNews(article)) : dispatch(addNews(article));
+  };
+
   return (
     <div className="max-w-sm mx-auto bg-white rounded-xl overflow-hidden shadow-lg flex flex-col justify-between">
       <div>
@@ -33,7 +45,16 @@ function Card({ article, button }) {
         >
           Read More
         </a>
-        {button}
+        <button
+          onClick={handleSave}
+          className={`ml-2 ${
+            isSaved
+              ? "bg-red-500 text-white rounded items-center h-auto w-14 hover:bg-red-800"
+              : "bg-blue-500 text-white rounded items-center h-auto w-12 hover:bg-blue-800"
+          } transition-all duration-300`}
+        >
+          {isSaved ? "Saved" : "Save"}
+        </button>
       </div>
     </div>
   );

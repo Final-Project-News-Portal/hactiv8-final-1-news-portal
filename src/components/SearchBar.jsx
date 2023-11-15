@@ -9,7 +9,6 @@ const SearchBar = () => {
   const handleSearch = () => {
     if (searchTerm) {
       navigate(`/search?q=${searchTerm}`);
-      window.location.reload();
     }
   };
   const handleKeyPress = (event) => {
