@@ -32,7 +32,7 @@ const Home = () => {
   const headline = data && data.length > 0 ? data[0] : null;
   const heroStyle = {
     width: "100%",
-    height: heroHeight,
+    height: heroHeight ? "600px" : "300px",
   };
 
   return (
@@ -67,6 +67,9 @@ const Home = () => {
         </section>
       )}
       <div className="ml-10 mr-10 mx-auto p-4 mt-20">
+        <h1 className="mt-10 mb-0 text-3xl font-bold tracking-tight md:mt-16 xl:mt-16 text-left">
+          Hot Topic
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {isLoading ? (
             <p>Loading...</p>
