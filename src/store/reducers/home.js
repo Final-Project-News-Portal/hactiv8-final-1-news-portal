@@ -37,6 +37,7 @@ const homeSlice = createSlice({
       .addCase(fetchNews.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = action.payload.articles;
+        console.log(state.data);
       })
       .addCase(fetchNews.rejected, (state, action) => {
         state.isLoading = false;
