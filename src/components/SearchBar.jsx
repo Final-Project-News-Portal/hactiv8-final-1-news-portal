@@ -25,7 +25,7 @@ const SearchBar = () => {
           placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyUp={handleKeyPress}
+          onKeyDown={handleKeyPress}
           className="text-base pr-2 h-8 w-64 rounded-lg pl-3 border hover:border-slate-700 transition duration-300"
         />
 
